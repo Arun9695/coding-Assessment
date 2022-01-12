@@ -1,77 +1,40 @@
-public class Employee 
-{
-
-    private int baseHours = 40;
-    private double baseSalary = 40000.0;
-    private int baseVacationDays = 10;
-    private String baseVacationForm = "yellow";
-        
-    public int getHours() 
-    {
-        return baseHours;                
+public class Car {
+    public void m1() {
+        System.out.println("car 1");
     }
 
-    public double getSalary() 
-    {
-        return baseSalary;              
+    public void m2() {
+        System.out.println("car 2");
     }
 
-    public int getVacationDays() 
-    {
-        return baseVacationDays;        
-    }
-
-    public String getVacationForm() 
-    {
-        return baseVacationForm;         
-    }
-        
-        
-    public final void setBaseHours(int hours) 
-    {
-        baseHours = hours;
-    }
-    public final void setBaseSalary(double salary) 
-    {
-        baseSalary = salary;
-    }
-    public final void setBaseVacationDays(int days) 
-    {
-        baseVacationDays = days;
-    }
-    public final void setBaseVacationForm(String form) 
-    {
-        baseVacationForm = form;
+    public String toString() {
+        return "vroom";
     }
 }
-public class Janitor extends Employee {
-    
-    public int getHours() 
-    {
-        return 2 * super.getHours();
+
+public class Truck extends Car {
+    public void m1() {
+        System.out.println("truck 1");
     }
-    
-    public double getSalary() 
-    {
-        return super.getSalary() - 10000;
+  
+public class MonsterTruck extends Car {
+    public void m1() {
+        System.out.println("Monster 1");
     }
-    
-    public int getVacationDays() 
-    {
-        return super.getVacationDays() / 2;
+
+    public void m2() {
+        super.m1();
+        super.m2();
     }
-    
-    public void clean() {
-        System.out.println("Workin' for the man.");
+
+    public String toString() {
+        return super.toString() + super.toString() + super.toString();
     }
-}
-public class Main
-{
-    public static void main(String[] args)
-    {
-        Janitor ob = new Janitor();
-        ob.getHours();
-        ob.getSalary();
-        ob.getVacationDays();
+    public static void main(String[] args) {
+        MonsterTruck obj =new MonsterTruck();
+        obj.m1();
+        obj.m2();
+        obj.toString();
+        
     }
 }

@@ -1,45 +1,77 @@
-package problems;
-import java.io.*;
-public class Car {
-    public void m1() {
-        System.out.println("car 1");
-    }
+public class Employee 
+{
 
-    public void m2() {
-        System.out.println("car 2");
-    }
-
-    public String toString() {
-        return "vroom";
-    }
-}
-
-public class Truck extends Car {
-    public void m1() {
-        System.out.println("truck 1");
-    }
-
-    public String toString() {
-        return super.toString() + super.toString();
-    }
-}
-public class MonsterTruck extends Truck {
-    public void m1() {
-        System.out.println("Monster 1");
-    }
-
-    public void m2() {
-        super.m1();
-    }
-
-    public String toString() {
-        return super.toString() + super.toString() + super.toString();
-    }
-    public static void main(String[] args) {
-        MonsterTruck obj= new MonsterTruck();
-        obj.m1();
-        obj.m2();
-        obj.toString();
+    private int baseHours = 40;
+    private double baseSalary = 40000.0;
+    private int baseVacationDays = 10;
+    private String baseVacationForm = "yellow";
         
+    public int getHours() 
+    {
+        return baseHours;                
+    }
+
+    public double getSalary() 
+    {
+        return baseSalary;              
+    }
+
+    public int getVacationDays() 
+    {
+        return baseVacationDays;        
+    }
+
+    public String getVacationForm() 
+    {
+        return baseVacationForm;         
+    }
+        
+        
+    public final void setBaseHours(int hours) 
+    {
+        baseHours = hours;
+    }
+    public final void setBaseSalary(double salary) 
+    {
+        baseSalary = salary;
+    }
+    public final void setBaseVacationDays(int days) 
+    {
+        baseVacationDays = days;
+    }
+    public final void setBaseVacationForm(String form) 
+    {
+        baseVacationForm = form;
+    }
+}
+public class Janitor extends Employee {
+    
+    public int getHours() 
+    {
+        return 2 * super.getHours();
+    }
+    
+    public double getSalary() 
+    {
+        return super.getSalary() - 10000;
+    }
+    
+    public int getVacationDays() 
+    {
+        return super.getVacationDays() / 2;
+    }
+    
+    public void clean() {
+        System.out.println("Workin' for the man.");
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Janitor ob = new Janitor();
+        ob.getHours();
+        ob.getSalary();
+        ob.getVacationDays();
     }
 }

@@ -39,6 +39,7 @@ public class MonsterTruck extends Truck {
         MonsterTruck obj= new MonsterTruck();
         obj.m1();
         obj.m2();
+        obj.toString();
         
     }
 }

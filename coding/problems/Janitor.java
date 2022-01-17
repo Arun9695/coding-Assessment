@@ -1,4 +1,4 @@
-public class Employee {
+class Employee {
 
     private int baseHours = 40;
     private double baseSalary = 40000.0;
@@ -58,9 +58,9 @@ public class Janitor extends Employee {
 
     public static void main(String[] args) {
         Janitor obj = new Janitor();
-        obj.getHours();
-        obj.getSalary();
-        obj.getVacationDays();
-        obj.getVacationForm();
+        System.out.println("Hours:" + obj.getHours());
+        System.out.println("Salary:" + obj.getSalary());
+        System.out.println("VacationDays:" + obj.getVacationDays());
+        System.out.println("VacationForm:" + obj.getVacationForm());
     }
 }

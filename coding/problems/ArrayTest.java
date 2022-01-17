@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ArrayTest
 {
     public static boolean isUnique(int[] a)
